@@ -44,7 +44,6 @@ void main() {
   test(
     'list, should return a valid object',
     () async {
-      String id = "ID";
       String json = fixture("books.json");
       final decoded = jsonDecode(json) as Map<String, dynamic>;
 
