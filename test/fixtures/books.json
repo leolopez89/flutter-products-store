@@ -1,0 +1,106 @@
+{
+    "kind": "kind",
+    "totalItems": 1,
+    "items": [
+        {
+            "kind": "kind",
+            "id": "id",
+            "etag": "etag",
+            "selfLink": "selfLink",
+            "volumeInfo": {
+                "title": "title",
+                "authors": [
+                    "authors"
+                ],
+                "publisher": "publisher",
+                "publishedDate": "publishedDate",
+                "description": "description",
+                "industryIdentifiers": [
+                    {
+                        "type": "type",
+                        "identifier": "identifier5"
+                    },
+                    {
+                        "type": "type",
+                        "identifier": "identifier4"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 1,
+                "printType": "printType",
+                "categories": [
+                    "authors"
+                ],
+                "averageRating": 1,
+                "ratingsCount": 1,
+                "maturityRating": "maturityRating",
+                "allowAnonLogging": true,
+                "contentVersion": "contentVersion",
+                "panelizationSummary": {
+                    "containsEpubBubbles": true,
+                    "containsImageBubbles": true
+                },
+                "imageLinks": {
+                    "smallThumbnail": "smallThumbnail",
+                    "thumbnail": "thumbnail",
+                    "small": "small"
+                },
+                "language": "language",
+                "previewLink": "previewLink",
+                "infoLink": "infoLink",
+                "canonicalVolumeLink": "canonicalVolumeLinkJ"
+            },
+            "saleInfo": {
+                "country": "country",
+                "saleability": "saleability",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 1.0,
+                    "currencyCode": "currencyCode"
+                },
+                "retailPrice": {
+                    "amount": 1.0,
+                    "currencyCode": "currencyCode"
+                },
+                "buyLink": "buyLink",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 1000000,
+                            "currencyCode": "currencyCode"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 1000000,
+                            "currencyCode": "currencyCode"
+                        },
+                        "giftable": true
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "country",
+                "viewability": "viewability",
+                "embeddable": true,
+                "publicDomain": true,
+                "textToSpeechPermission": "textToSpeechPermission",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "acsTokenLinki"
+                },
+                "pdf": {
+                    "isAvailable": true
+                },
+                "webReaderLink": "webReaderLink",
+                "accessViewStatus": "accessViewStatus",
+                "quoteSharingAllowed": true
+            },
+            "searchInfo": {
+                "textSnippet": "textSnippet"
+            }
+        }
+    ]
+}
