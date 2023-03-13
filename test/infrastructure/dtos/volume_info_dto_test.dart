@@ -30,9 +30,8 @@ void main() {
     });
 
     test('fromJson, should return a valid json map', () async {
-      final jsonMap = jsonDecode(fixture("books.json")) as Map<String, dynamic>;
-      final result =
-          VolumeInfoDto.fromJson(jsonMap['items'].first["volumeInfo"]);
+      final jsonMap = jsonDecode(fixture("book.json")) as Map<String, dynamic>;
+      final result = VolumeInfoDto.fromJson(jsonMap["volumeInfo"]);
       expect(result.description, volumeInfoDto.description);
       expect(result.pageCount, volumeInfoDto.pageCount);
     });

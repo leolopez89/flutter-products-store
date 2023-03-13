@@ -30,8 +30,8 @@ void main() {
     });
 
     test('fromJson, should return a valid json map', () async {
-      final jsonMap = jsonDecode(fixture("books.json")) as Map<String, dynamic>;
-      final result = SaleInfoDto.fromJson(jsonMap['items'].first["saleInfo"]);
+      final jsonMap = jsonDecode(fixture("book.json")) as Map<String, dynamic>;
+      final result = SaleInfoDto.fromJson(jsonMap["saleInfo"]);
       expect(result.buyLink, saleInfoDto.buyLink);
       expect(result.country, saleInfoDto.country);
     });

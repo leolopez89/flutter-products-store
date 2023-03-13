@@ -30,8 +30,8 @@ void main() {
     });
 
     test('fromJson, should return a valid json map', () async {
-      final jsonMap = jsonDecode(fixture("books.json")) as Map<String, dynamic>;
-      final result = BookDto.fromJson(jsonMap['items'].first);
+      final jsonMap = jsonDecode(fixture("book.json")) as Map<String, dynamic>;
+      final result = BookDto.fromJson(jsonMap);
       expect(result.id, bookDto.id);
       expect(result.kind, bookDto.kind);
     });

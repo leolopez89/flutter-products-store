@@ -30,9 +30,9 @@ void main() {
     });
 
     test('fromJson, should return a valid json map', () async {
-      final jsonMap = jsonDecode(fixture("books.json")) as Map<String, dynamic>;
-      final result = ImageLinksDto.fromJson(
-          jsonMap['items'].first["volumeInfo"]["imageLinks"]);
+      final jsonMap = jsonDecode(fixture("book.json")) as Map<String, dynamic>;
+      final result =
+          ImageLinksDto.fromJson(jsonMap["volumeInfo"]["imageLinks"]);
       expect(result.small, imageLinksDto.small);
       expect(result.thumbnail, imageLinksDto.thumbnail);
     });
