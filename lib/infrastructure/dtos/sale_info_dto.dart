@@ -11,7 +11,7 @@ class SaleInfoDto {
   SaleInfoDto({
     this.country,
     this.saleability,
-    bool? isEbook,
+    this.isEbook,
     this.listPrice,
     this.buyLink,
   });

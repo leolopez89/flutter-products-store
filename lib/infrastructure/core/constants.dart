@@ -5,6 +5,5 @@ mixin ApiEndpoint {
 }
 
 mixin StorageKeys {
-  static const String userEmail = "USER_EMAIL";
-  static const String userPassword = "USER_PASSWORD";
+  static const String loggedUser = "LOGGED_USER";
 }

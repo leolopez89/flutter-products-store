@@ -3,12 +3,14 @@ import 'package:flutter_products_store/domain/entities/books_entity.dart';
 import 'package:flutter_products_store/domain/entities/image_links_entity.dart';
 import 'package:flutter_products_store/domain/entities/list_price_entity.dart';
 import 'package:flutter_products_store/domain/entities/sale_info_entity.dart';
+import 'package:flutter_products_store/domain/entities/user_entity.dart';
 import 'package:flutter_products_store/domain/entities/volume_info_entity.dart';
 import 'package:flutter_products_store/infrastructure/dtos/book_dto.dart';
 import 'package:flutter_products_store/infrastructure/dtos/books_dto.dart';
 import 'package:flutter_products_store/infrastructure/dtos/image_links_dto.dart';
 import 'package:flutter_products_store/infrastructure/dtos/list_price_dto.dart';
 import 'package:flutter_products_store/infrastructure/dtos/sale_info_dto.dart';
+import 'package:flutter_products_store/infrastructure/dtos/user_dto.dart';
 import 'package:flutter_products_store/infrastructure/dtos/volume_info_dto.dart';
 
 //DTOS
@@ -58,6 +60,10 @@ final defaultListPriceDto = ListPriceDto(
   amount: 1.0,
   currencyCode: "currencyCode",
 );
+final defaultUserDto = UserDto(
+  email: "email",
+  password: "password",
+);
 
 // ENTITIES
 
@@ -105,4 +111,9 @@ final defaultSaleInfoEntity = SaleInfoEntity(
 final defaultListPriceEntity = ListPriceEntity(
   amount: 1.0,
   currencyCode: "currencyCode",
+);
+
+final defaultUserEntity = UserEntity(
+  email: "email",
+  password: "password",
 );
