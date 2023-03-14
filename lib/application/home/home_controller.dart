@@ -87,7 +87,10 @@ class HomeController extends GetxController {
   goToDetails(int index) =>
       Get.toNamed(Routes.productDetails, arguments: {"book": booksList[index]});
 
-  goToCartPage() => Get.toNamed(Routes.cart);
+  goToCartPage() async {
+    await Get.toNamed(Routes.cart);
+    update();
+  }
 
   logout() {
     userRepository.logout().fold(

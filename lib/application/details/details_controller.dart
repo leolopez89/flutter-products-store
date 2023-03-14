@@ -38,5 +38,8 @@ class DetailsController extends GetxController {
     update();
   }
 
-  goToCartPage() => Get.toNamed(Routes.cart);
+  goToCartPage() async {
+    await Get.toNamed(Routes.cart);
+    update();
+  }
 }

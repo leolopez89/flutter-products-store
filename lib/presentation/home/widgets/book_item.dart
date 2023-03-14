@@ -75,18 +75,6 @@ class BookItem extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   price,
-                  maxLines: 4,
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700,
-                      color: hasPrice
-                          ? AppColors.alelrtColor
-                          : AppColors.mainColor),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  price,
-                  maxLines: 4,
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,

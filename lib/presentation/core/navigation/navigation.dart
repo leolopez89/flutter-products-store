@@ -3,6 +3,7 @@ import 'package:flutter_products_store/domain/bindings/chechout_controller_bindi
 import 'package:flutter_products_store/domain/bindings/details_controller_binding.dart';
 import 'package:flutter_products_store/domain/bindings/home_controller_binding.dart';
 import 'package:flutter_products_store/domain/bindings/login_controller_binding.dart';
+import 'package:flutter_products_store/presentation/cart/cart_page.dart';
 import 'package:flutter_products_store/presentation/core/navigation/routes.dart';
 import 'package:flutter_products_store/presentation/details/details_page.dart';
 import 'package:flutter_products_store/presentation/home/home_page.dart';
@@ -17,12 +18,12 @@ List<GetPage> appRoutes = [
   ),
   GetPage(
     name: Routes.home,
-    page: () => const HomePage(), //HomePage(),
+    page: () => const HomePage(),
     binding: HomeControllerBinding(),
   ),
   GetPage(
     name: Routes.cart,
-    page: () => const LoginPage(), //CartPage(),
+    page: () => const CartPage(),
     binding: CartControllerBinding(),
   ),
   GetPage(
@@ -32,7 +33,7 @@ List<GetPage> appRoutes = [
   ),
   GetPage(
     name: Routes.productDetails,
-    page: () => const DetailsPage(), //DetailsPage(),
+    page: () => const DetailsPage(),
     binding: DetailsControllerBinding(),
   ),
 ];

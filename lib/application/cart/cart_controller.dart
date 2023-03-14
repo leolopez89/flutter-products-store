@@ -24,5 +24,6 @@ class CartController extends GetxController {
     update();
   }
 
-  goToCheckoutPage() => Get.toNamed(Routes.checkout);
+  void goToCheckoutPage() => Get.toNamed(Routes.checkout);
+  void back() => Get.back();
 }
