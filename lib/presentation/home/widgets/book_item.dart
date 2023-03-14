@@ -74,7 +74,7 @@ class BookItem extends StatelessWidget {
                       )),
                 const SizedBox(height: 10),
                 Text(
-                  price,
+                  "\$$price",
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,

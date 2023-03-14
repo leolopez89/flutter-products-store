@@ -75,7 +75,7 @@ class DetailsPage extends GetView<DetailsController> {
                 Row(
                   children: [
                     Text(
-                      price,
+                      "\$$price",
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w800,

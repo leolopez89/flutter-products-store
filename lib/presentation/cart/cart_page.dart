@@ -38,7 +38,7 @@ class CartPage extends GetView<CartController> {
             onPressed: _.appState.totalPrice > 0 ? _.goToCheckoutPage : null,
             style:
                 ElevatedButton.styleFrom(backgroundColor: AppColors.mainColor),
-            child: Text("CHECKOUT: ${_.appState.totalPrice}"),
+            child: Text("CHECKOUT: \$${_.appState.totalPrice}"),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -26,3 +26,36 @@ String? emailValidator(String? value) {
           ? null
           : "Invalid email";
 }
+
+/// Validate postal code
+String? cardValidator(String? value) {
+  RegExp regex = RegExp(r'^[0-9]{16}$');
+  final val = value ?? "";
+  return val.isEmpty
+      ? "Required field"
+      : regex.hasMatch(val)
+          ? null
+          : "Invalid card";
+}
+
+/// Validate postal code
+String? cvvValidator(String? value) {
+  RegExp regex = RegExp(r'^[0-9]{3}$');
+  final val = value ?? "";
+  return val.isEmpty
+      ? "Required field"
+      : regex.hasMatch(val)
+          ? null
+          : "Invalid cvv";
+}
+
+/// Validate postal code
+String? dateValidator(String? value) {
+  RegExp regex = RegExp(r'^[0-9][0-9]/[0-9][0-9]$');
+  final val = value ?? "";
+  return val.isEmpty
+      ? "Required field"
+      : regex.hasMatch(val)
+          ? null
+          : "Invalid cvv";
+}

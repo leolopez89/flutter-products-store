@@ -50,17 +50,17 @@ class BookElement extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Text(
                 book.volumeInfo?.title ?? "No title",
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style:
-                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
               ),
               const SizedBox(height: 10),
               if ((book.volumeInfo?.authors ?? []).isNotEmpty)
-                ...book.volumeInfo!.authors!.take(2).map((author) => Text(
+                ...book.volumeInfo!.authors!.take(1).map((author) => Text(
                       author,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
@@ -69,7 +69,7 @@ class BookElement extends StatelessWidget {
                     )),
               const SizedBox(height: 10),
               Text(
-                price,
+                "\$$price",
                 style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w700,
