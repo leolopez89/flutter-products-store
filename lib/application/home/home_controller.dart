@@ -13,10 +13,10 @@ class HomeController extends GetxController {
   bool loading = true;
   SortingMode sorting = SortingMode.relevance;
 
-  List<BookEntity> books = [];
-  List<BookEntity> sorted = [];
+  List<BookEntity> _books = [];
+  final List<BookEntity> _sorted = [];
   List<BookEntity> get booksList =>
-      sorting == SortingMode.relevance ? books : sorted;
+      sorting == SortingMode.relevance ? _books : _sorted;
 
   HomeController({
     required this.bookRepository,
@@ -28,6 +28,7 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     loading = false;
+    getBooks();
     update();
   }
 
@@ -37,25 +38,41 @@ class HomeController extends GetxController {
 
     final results = await bookRepository.list();
     results.fold((error) {
-      books = [];
+      _books = [];
       Get.snackbar("Error", error.message.body);
       loading = false;
       update();
     }, (results) {
       loading = false;
+      _books = results;
+      _sort();
       update();
-      books = results;
     });
   }
 
   void switchSort() {
-    if (sorting == SortingMode.price) {
+    if (sorting == SortingMode.priceUp) {
       sorting = SortingMode.relevance;
+    } else if (sorting == SortingMode.relevance) {
+      sorting = SortingMode.priceDown;
     } else {
-      sorting = SortingMode.price;
-      sorted.clear();
-      sorted.addAll(books);
-      sorted.sort((a, b) => (a.saleInfo?.listPrice?.amount ?? 0)
+      sorting = SortingMode.priceUp;
+    }
+    _sort();
+    update();
+  }
+
+  void _sort() {
+    if (sorting == SortingMode.priceDown) {
+      _sorted.clear();
+      _sorted.addAll(_books);
+      _sorted.sort((a, b) => (a.saleInfo?.listPrice?.amount ?? 0)
+          .compareTo(b.saleInfo?.listPrice?.amount ?? 0));
+    }
+    if (sorting == SortingMode.priceUp) {
+      _sorted.clear();
+      _sorted.addAll(_books);
+      _sorted.sort((b, a) => (a.saleInfo?.listPrice?.amount ?? 0)
           .compareTo(b.saleInfo?.listPrice?.amount ?? 0));
     }
     update();
@@ -78,9 +95,25 @@ class HomeController extends GetxController {
           (r) => Get.offAllNamed(Routes.login),
         );
   }
+
+  String get sortModeStr => "Sorting by ${sorting.toShortString()}";
 }
 
 enum SortingMode {
   relevance,
-  price,
+  priceUp,
+  priceDown,
+}
+
+extension SortingModeToString on SortingMode {
+  String toShortString() {
+    switch (this) {
+      case SortingMode.relevance:
+        return "relevance";
+      case SortingMode.priceUp:
+        return "higher price";
+      case SortingMode.priceDown:
+        return "lower price";
+    }
+  }
 }

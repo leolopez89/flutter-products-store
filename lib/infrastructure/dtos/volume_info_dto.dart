@@ -28,13 +28,13 @@ class VolumeInfoDto {
 
   VolumeInfoDto.fromJson(Map<String, dynamic> json) {
     title = json['title'];
-    authors = json['authors'].cast<String>();
+    authors = (json['authors'] ?? []).cast<String>();
     publisher = json['publisher'];
     publishedDate = json['publishedDate'];
     description = json['description'];
     pageCount = json['pageCount'];
     printedPageCount = json['printedPageCount'];
-    categories = json['categories'].cast<String>();
+    categories = (json['categories'] ?? []).cast<String>();
     imageLinks = json['imageLinks'] != null
         ? ImageLinksDto.fromJson(json['imageLinks'])
         : null;
