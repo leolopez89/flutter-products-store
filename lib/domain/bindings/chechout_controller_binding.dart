@@ -1,4 +1,3 @@
-import 'package:flutter_products_store/application/cart/cart_controller.dart';
 import 'package:flutter_products_store/application/chechout/checkout_controller.dart';
 import 'package:flutter_products_store/application/core/app_state.dart';
 import 'package:flutter_products_store/domain/users/repositories/i_user_repository.dart';

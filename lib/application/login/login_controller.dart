@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_products_store/application/core/validators.dart';
 import 'package:flutter_products_store/domain/entities/user_entity.dart';
 import 'package:flutter_products_store/domain/users/repositories/i_user_repository.dart';
 import 'package:flutter_products_store/presentation/core/navigation/routes.dart';
@@ -22,9 +23,6 @@ class LoginController extends GetxController {
   void onInit() {
     super.onInit();
     loading = false;
-    emailController.addListener(validateFields);
-    passwordController.addListener(validateFields);
-    repeatPassController.addListener(validateFields);
     update();
   }
 
@@ -49,13 +47,8 @@ class LoginController extends GetxController {
     return true;
   }
 
-  goToLogin() {
-    isLogin = true;
-    update();
-  }
-
-  goToRegister() {
-    isLogin = false;
+  switchLoginRegister() {
+    isLogin = !isLogin;
     update();
   }
 
@@ -67,10 +60,13 @@ class LoginController extends GetxController {
     }
   }
 
-  bool validateFields() =>
-      emailController.text.isEmail &&
-      passwordController.text.isNotEmpty &&
-      (!isLogin || repeatPassController.text == passwordController.text);
+  String? passwordValidator(String? value) =>
+      nameValidator(value) ??
+      (isLogin
+          ? null
+          : (passwordController.text != repeatPassController.text
+              ? "Password must match"
+              : null));
 
   @override
   void dispose() {

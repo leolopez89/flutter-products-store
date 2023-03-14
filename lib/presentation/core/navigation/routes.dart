@@ -5,7 +5,9 @@ mixin Routes {
   static String get getInitialRoute {
     final userRepository = Get.find<IUserRepository>();
     String page = login;
-    userRepository.isUserLoggedIn().fold((l) => null, (r) => page = home);
+    userRepository
+        .isUserLoggedIn()
+        .fold((l) => page = login, (r) => page = r ? home : login);
     return page;
   }
 

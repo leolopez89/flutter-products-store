@@ -1,11 +1,13 @@
 import 'package:flutter_products_store/application/core/app_state.dart';
 import 'package:flutter_products_store/domain/books/repositories/i_books_repository.dart';
 import 'package:flutter_products_store/domain/entities/book_entity.dart';
+import 'package:flutter_products_store/domain/users/repositories/i_user_repository.dart';
 import 'package:flutter_products_store/presentation/core/navigation/routes.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final IBookRepository bookRepository;
+  final IUserRepository userRepository;
   final AppState appState;
 
   bool loading = true;
@@ -18,6 +20,7 @@ class HomeController extends GetxController {
 
   HomeController({
     required this.bookRepository,
+    required this.userRepository,
     required this.appState,
   });
 
@@ -68,6 +71,13 @@ class HomeController extends GetxController {
       Get.toNamed(Routes.productDetails, arguments: {"book": booksList[index]});
 
   goToCartPage() => Get.toNamed(Routes.cart);
+
+  logout() {
+    userRepository.logout().fold(
+          (l) => Get.snackbar("Error", l.message.body),
+          (r) => Get.offAllNamed(Routes.login),
+        );
+  }
 }
 
 enum SortingMode {
