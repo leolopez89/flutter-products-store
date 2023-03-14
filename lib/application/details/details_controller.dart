@@ -23,7 +23,9 @@ class DetailsController extends GetxController {
     }
   }
 
-  void addToCart(int index) {
+  void back() => Get.back();
+
+  void addToCart() {
     appState.books.add(book);
     appState.update();
     update();

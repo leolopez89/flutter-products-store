@@ -4,6 +4,7 @@ import 'package:flutter_products_store/domain/bindings/details_controller_bindin
 import 'package:flutter_products_store/domain/bindings/home_controller_binding.dart';
 import 'package:flutter_products_store/domain/bindings/login_controller_binding.dart';
 import 'package:flutter_products_store/presentation/core/navigation/routes.dart';
+import 'package:flutter_products_store/presentation/details/details_page.dart';
 import 'package:flutter_products_store/presentation/home/home_page.dart';
 import 'package:flutter_products_store/presentation/login/login_page.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,7 @@ List<GetPage> appRoutes = [
   ),
   GetPage(
     name: Routes.productDetails,
-    page: () => const LoginPage(), //DetailsPage(),
+    page: () => const DetailsPage(), //DetailsPage(),
     binding: DetailsControllerBinding(),
   ),
 ];

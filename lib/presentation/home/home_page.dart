@@ -15,7 +15,7 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: AppColors.backgroundColor,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Product List'),
+          title: const Text('Products List'),
           backgroundColor: AppColors.mainColor,
           actions: [
             IconButton(
@@ -55,6 +55,7 @@ class HomePage extends GetView<HomeController> {
                       return BookItem(
                         book: book,
                         addToCart: () => _.addToCart(index),
+                        goToDetails: () => _.goToDetails(index),
                       );
                     })),
         floatingActionButton: FloatingActionButton(
